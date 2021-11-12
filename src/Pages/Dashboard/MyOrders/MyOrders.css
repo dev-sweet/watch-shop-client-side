@@ -1,0 +1,45 @@
+.single-order {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border: 1px solid #5c5c5c;
+  color: rgb(29, 29, 29);
+  border-radius: 6px;
+}
+.order-details h5 {
+  font-size: 17px;
+  color: rgb(75, 75, 75);
+}
+.order-details h6 {
+  font-size: 15px;
+}
+.pending,
+.approved {
+  padding: 5px 15px;
+  border-radius: 15px;
+  color: rgb(31, 31, 31);
+  font-size: 13px;
+}
+.approved {
+  background: rgba(2, 255, 65, 0.507);
+}
+.pending {
+  background: rgba(255, 10, 10, 0.657);
+}
+.order-img img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+/* responsive design */
+@media only screen and (max-width: 991px) {
+  .single-order {
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+}

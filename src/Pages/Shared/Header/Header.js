@@ -25,7 +25,7 @@ const Header = () => {
 
           <Nav className="d-none d-lg-flex flex-row align-items-center ms-auto pe-3">
             {user.email && (
-              <NavLink className="navbar-link" to="/">
+              <NavLink className="navbar-link" to="/dashboard">
                 <i className="fas fa-chart-line me-2"></i>
                 Dashboard
               </NavLink>
@@ -62,7 +62,7 @@ const Header = () => {
                   Products
                 </NavLink>
                 {user.email && (
-                  <NavLink className="navbar-link" to="/">
+                  <NavLink className="navbar-link" to="/dashboard">
                     Dashboard
                   </NavLink>
                 )}

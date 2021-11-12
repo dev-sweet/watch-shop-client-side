@@ -30,8 +30,9 @@ const PlaceOrder = () => {
       name,
       price,
       img,
+      status: 'pending',
     };
-    fetch('http://localhost:5000/orders', {
+    fetch('https://stark-reef-55996.herokuapp.com/orders', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
@@ -127,7 +128,7 @@ const PlaceOrder = () => {
         <Modal.Header closeButton>
           <Modal.Title>Congratulations </Modal.Title>
         </Modal.Header>
-        <Modal.Body>Your Order is Successfully Placed</Modal.Body>
+        <Modal.Body>Your order is successfully placed</Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
