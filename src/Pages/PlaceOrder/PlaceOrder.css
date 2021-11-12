@@ -1,0 +1,32 @@
+.place-order {
+  padding: 50px 0;
+}
+.order-content {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.order-input {
+  width: 100%;
+  margin-top: 15px;
+  border: 1px solid rgb(170, 170, 170);
+  outline: none;
+  padding: 12px 10px;
+}
+.order-input:focus {
+  border-color: black;
+}
+
+.order-btn {
+  background-color: #000;
+  text-decoration: none;
+  color: #fff;
+  width: 100%;
+  padding: 15px 0;
+  margin-top: 14px;
+  display: block;
+  border: none;
+}
+.order-btn:hover {
+  color: #fff;
+}

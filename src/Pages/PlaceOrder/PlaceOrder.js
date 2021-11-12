@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Col, Container, Row, Modal, Button } from 'react-bootstrap';
 import { useParams } from 'react-router';
 import { useForm } from 'react-hook-form';
+import useAuth from '../../hooks/useAuth';
+import Header from '../Shared/Header/Header';
+import './PlaceOrder.css';
+
 const PlaceOrder = () => {
   const [product, setProduct] = useState({});
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
   const { img, name, desc, price } = product;
-
+  const { user } = useAuth();
   const params = useParams();
   const id = params.id;
 
@@ -13,41 +19,122 @@ const PlaceOrder = () => {
   const {
     register,
     handleSubmit,
-    watch,
+    reset,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+
+  // post order information on submittin the form
+  const onSubmit = (data) => {
+    const orderInfo = {
+      ...data,
+      name,
+      price,
+      img,
+    };
+    fetch('http://localhost:5000/orders', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(orderInfo),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          setShow(true);
+          reset();
+        }
+      });
+  };
+
+  // get product information by product id
   useEffect(() => {
-    fetch(`http://localhost:5000/products/${id}`)
+    fetch(`https://stark-reef-55996.herokuapp.com/products/${id}`)
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, [id]);
   return (
-    <div className="place-order">
-      <Container>
-        <Row>
-          <Col md={6} sm={12} xs={12}>
-            <img className="w-100" src={img} alt="" />
-          </Col>
-          <Col md={6} sm={12} xs={12}>
-            <h2>{name}</h2>
-            <h4>${price}.00</h4>
-            <p>{desc}</p>
-            <form onSubmit={handleSubmit(onSubmit)}>
-              {/* register your input into the hook by invoking the "register" function */}
-              <input defaultValue="test" {...register('example')} />
+    <>
+      <Header />
+      <div className="place-order">
+        <Container>
+          <Row>
+            <Col lg={6} md={12} sm={12} xs={12}>
+              <div className="d-flex align-items-center h-100">
+                <img className="w-100" src={img} alt="" />
+              </div>
+            </Col>
+            <Col lg={6} md={12} sm={12} xs={12}>
+              <div className="order-content mt-4 mt-lg-0">
+                <div>
+                  <h2 className="mb-3">{name}</h2>
+                  <h4 className="font-weight-bold">${price}.00</h4>
+                  <p className="text-dark">{desc}</p>
 
-              {/* include validation with required or other standard HTML validation rules */}
-              <input {...register('exampleRequired', { required: true })} />
-              {/* errors will return when field validation fails  */}
-              {errors.exampleRequired && <span>This field is required</span>}
-
-              <input type="submit" />
-            </form>
-          </Col>
-        </Row>
-      </Container>
-    </div>
+                  {/* order form */}
+                  <form className="py-3" onSubmit={handleSubmit(onSubmit)}>
+                    <input
+                      className="order-input"
+                      type="text"
+                      defaultValue={user.displayName}
+                      placeholder="Your Name"
+                      {...register('userName', { required: true })}
+                    />
+                    {errors.email && (
+                      <span className="text-danger">Name is required !</span>
+                    )}
+                    <input
+                      className="order-input"
+                      type="email"
+                      defaultValue={user.email}
+                      placeholder="Email"
+                      {...register('email', { required: true })}
+                    />
+                    {errors.email && (
+                      <span className="text-danger">Email is required !</span>
+                    )}
+                    <input
+                      className="order-input"
+                      type="text"
+                      placeholder="Phone"
+                      {...register('phone', { required: true })}
+                    />
+                    {errors.phone && (
+                      <span className="text-danger">Phone is required !</span>
+                    )}
+                    <input
+                      className="order-input"
+                      type="text"
+                      placeholder="Address"
+                      {...register('address', { required: true })}
+                    />
+                    {errors.address && (
+                      <span className="text-danger">Address is required !</span>
+                    )}
+                    <input
+                      className="order-btn"
+                      value="PLACE ORDER"
+                      type="submit"
+                    />
+                  </form>
+                </div>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </div>
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Congratulations </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Your Order is Successfully Placed</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </>
   );
 };
 
