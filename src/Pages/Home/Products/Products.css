@@ -1,0 +1,18 @@
+.products-container {
+  padding: 60px 0;
+}
+.products-title {
+  margin-bottom: 30px;
+  color: rgb(75, 75, 75);
+  text-align: center;
+  font-size: 50px;
+}
+.products-title span {
+  color: rgb(255, 225, 93);
+}
+
+@media only screen and (max-width: 576px) {
+  .products-title {
+    font-size: 30px;
+  }
+}

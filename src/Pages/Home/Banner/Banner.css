@@ -1,0 +1,53 @@
+.slider-item {
+  height: 90vh;
+}
+.slider-text {
+  color: #fff;
+}
+.slider-text span,
+p {
+  font-size: 18px;
+  color: rgb(255, 247, 247);
+}
+.slider-text span {
+  font-weight: 500;
+}
+.slider-text p {
+  font-weight: 600;
+}
+.slider-text h1 {
+  font-size: 50px;
+}
+/* ----------responsive design---------- */
+
+/* for large devices */
+@media only screen and (min-width: 768px) {
+  .carousel-caption.slider-details {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    text-align: left;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .slider-item {
+    height: 50vh;
+  }
+  .slider-text span,
+  p {
+    font-size: 16px;
+    color: rgb(255, 247, 247);
+  }
+}
+@media only screen and (max-width: 576px) {
+  .slider-item {
+    height: 45vh;
+  }
+  .slider-text h1 {
+    font-size: 35px;
+  }
+}

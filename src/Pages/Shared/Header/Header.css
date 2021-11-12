@@ -1,0 +1,22 @@
+.nav-logo {
+  width: 180px;
+}
+.navbar-link {
+  text-decoration: none;
+  color: black;
+  margin: 0 20px;
+}
+
+.offcanvas-logo {
+  width: 130px;
+}
+
+/* -----------responsive header ----------- */
+
+/* for mediaum devices */
+@media only screen and (max-width: 991px) {
+  .navbar-link {
+    margin-top: 20px;
+    text-align: center;
+  }
+}
