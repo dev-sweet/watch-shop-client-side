@@ -1,6 +1,6 @@
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
-import { NavLink, useRouteMatch, Switch, Route } from 'react-router-dom';
+import { NavLink, useRouteMatch, Switch, Route, Link } from 'react-router-dom';
 import Payment from '../Payment/Payment';
 import Review from '../Review/Review';
 import logo from '../../../images/logo.png';
@@ -11,13 +11,13 @@ const Dashboard = () => {
   return (
     <div>
       <Row>
-        <Col className="drawar" md={3} sm={12} xs={12}>
+        <Col className="drawar" lg={3} md={4} sm={12} xs={12}>
           <div className="dashboard-menu-container">
             <div className="text-center">
-              <img style={{ width: '200px' }} src={logo} alt="" />
+              <img className="dashboard-logo" src={logo} alt="" />
             </div>
             <div className="dashboard-nav">
-              <NavLink to={`${url}`}>
+              <NavLink className="" to={`${url}`}>
                 <i className="fas fa-list"></i> My Orders
               </NavLink>
               <NavLink to={`${url}/payment`}>
@@ -29,7 +29,7 @@ const Dashboard = () => {
             </div>
           </div>
         </Col>
-        <Col md={9} sm={12} xs={12}>
+        <Col lg={9} md={8} sm={12} xs={12}>
           <Switch>
             <Route exact path={`${path}`}>
               <MyOrders />
