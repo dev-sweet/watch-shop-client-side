@@ -5,7 +5,7 @@ const ManageOrders = () => {
 
   // change shipping status
   const handleStatus = (id) => {
-    fetch(`http://localhost:5000/orders/${id}`, {
+    fetch(`https://stark-reef-55996.herokuapp.com/orders/${id}`, {
       method: 'PUT',
     })
       .then((res) => res.json())
@@ -26,14 +26,14 @@ const ManageOrders = () => {
     }
   };
   useEffect(() => {
-    fetch('http://localhost:5000/orders')
+    fetch('https://stark-reef-55996.herokuapp.com/orders')
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, [orders]);
   return (
     <div className="py-5">
       <Container>
-        <h1 className="text-warning text-center">Manage Orders</h1>
+        <h1 className="text-warning text-center mb-4">Manage Orders</h1>
 
         <Table className="shadow" hover responsive="md">
           <thead className="table-head">
@@ -57,7 +57,7 @@ const ManageOrders = () => {
                   {order.status === 'pending' ? (
                     <span className="text-danger">Pending</span>
                   ) : (
-                    <span className="text-success">Shipping</span>
+                    <span className="text-success">Shipped</span>
                   )}
                 </th>
                 <td>
@@ -66,11 +66,11 @@ const ManageOrders = () => {
                       onClick={() => handleStatus(order._id)}
                       className="btn btn-primary btn-sm"
                     >
-                      Shipping
+                      Shipped
                     </button>
                   ) : (
                     <button className="btn btn-success btn-sm disabled">
-                      Shipping
+                      Shipped
                     </button>
                   )}
                   <button

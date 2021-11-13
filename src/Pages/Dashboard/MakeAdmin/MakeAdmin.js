@@ -41,7 +41,7 @@ const MakeAdmin = () => {
         <Modal.Header closeButton>
           <Modal.Title>Admin Success </Modal.Title>
         </Modal.Header>
-        <Modal.Body>Make Admin Successfuly</Modal.Body>
+        <Modal.Body>Make Admin Successfully</Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close

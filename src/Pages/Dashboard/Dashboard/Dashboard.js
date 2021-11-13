@@ -14,7 +14,7 @@ import AdminRoute from '../../Login/AdminRoute/AdminRoute';
 import useAuth from '../../../hooks/useAuth';
 const Dashboard = () => {
   let { path, url } = useRouteMatch();
-  const { isAdmin } = useAuth();
+  const { isAdmin, logOut } = useAuth();
   return (
     <div>
       <Row>
@@ -52,6 +52,9 @@ const Dashboard = () => {
                   </NavLink>
                 </>
               )}
+              <button onClick={logOut} className="btn mt-3 btn-secondary">
+                Logout
+              </button>
             </div>
           </div>
         </Col>

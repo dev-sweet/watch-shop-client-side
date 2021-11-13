@@ -9,7 +9,7 @@ const Reviews = () => {
     fetch('https://stark-reef-55996.herokuapp.com/reviews')
       .then((res) => res.json())
       .then((data) => setReviews(data));
-  }, []);
+  }, [reviews]);
   return (
     <div className="reviews-container">
       <Container>
