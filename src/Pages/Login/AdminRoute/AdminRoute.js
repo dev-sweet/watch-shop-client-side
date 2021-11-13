@@ -3,7 +3,7 @@ import { Redirect, Route } from 'react-router';
 import useAuth from '../../../hooks/useAuth';
 const PrivateRoute = ({ children, ...rest }) => {
   const { user, isAdmin, isLoading } = useAuth();
-  if (isLoading) {
+  if (isLoading || !isAdmin) {
     return (
       <div style={{ paddingTop: '300px', textAlign: 'center' }}>...Loading</div>
     );

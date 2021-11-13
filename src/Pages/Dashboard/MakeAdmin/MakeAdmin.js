@@ -11,7 +11,7 @@ const MakeAdmin = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch('http://localhost:5000/users/admin', {
+    fetch('https://stark-reef-55996.herokuapp.com/users/admin', {
       method: 'PUT',
       headers: {
         'content-type': 'application/json',

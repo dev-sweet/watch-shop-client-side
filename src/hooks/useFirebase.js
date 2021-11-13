@@ -106,7 +106,7 @@ const useFirebase = () => {
 
   // test admin
   useEffect(() => {
-    fetch(`http://localhost:5000/users/${user.email}`)
+    fetch(`https://stark-reef-55996.herokuapp.com/users/${user.email}`)
       .then((res) => res.json())
       .then((data) => setIsAdmin(data.admin));
   }, [user.email]);

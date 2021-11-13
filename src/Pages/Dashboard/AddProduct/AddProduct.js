@@ -13,7 +13,7 @@ const AddProduct = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    fetch('http://localhost:5000/products', {
+    fetch('https://stark-reef-55996.herokuapp.com/products', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
