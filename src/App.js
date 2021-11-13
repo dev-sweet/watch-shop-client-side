@@ -8,6 +8,7 @@ import Register from './Pages/Login/Register/Register';
 import AuthProvider from './context/AuthProvider/AuthProvider';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
+import ExploreProducts from './Pages/ExploreProducts/ExploreProducts';
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
             </Route>
             <Route exact path="/home">
               <Home />
+            </Route>
+            <Route exact path="/products">
+              <ExploreProducts />
             </Route>
             <Route exact path="/login">
               <Login />

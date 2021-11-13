@@ -4,7 +4,12 @@ import slider1 from '../../../images/slider3.jpg';
 import slider2 from '../../../images/slider2.jpg';
 import slider3 from '../../../images/slider1.jpg';
 import './Banner.css';
+import { useHistory } from 'react-router';
 const Banner = () => {
+  const history = useHistory();
+  const handleExplore = () => {
+    history.push('/products');
+  };
   return (
     <div>
       <Carousel>
@@ -22,7 +27,10 @@ const Banner = () => {
               <p>
                 Complete your everyday look with a classic leather strap watch
               </p>
-              <button className="btn btn-outline-light btn-large px-5 mt-3">
+              <button
+                onClick={handleExplore}
+                className="btn btn-outline-light btn-large px-5 mt-3"
+              >
                 Explore
               </button>
             </div>
@@ -42,7 +50,10 @@ const Banner = () => {
               <p>
                 Complete your everyday look with a classic leather strap watch
               </p>
-              <button className="btn btn-outline-light btn-large px-5 mt-3">
+              <button
+                onClick={handleExplore}
+                className="btn btn-outline-light btn-large px-5 mt-3"
+              >
                 Explore
               </button>
             </div>
@@ -62,7 +73,10 @@ const Banner = () => {
               <p>
                 Complete your everyday look with a classic leather strap watch
               </p>
-              <button className="btn btn-outline-light btn-large px-5 mt-3">
+              <button
+                onClick={handleExplore}
+                className="btn btn-outline-light btn-large px-5 mt-3"
+              >
                 Explore
               </button>
             </div>

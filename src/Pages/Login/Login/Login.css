@@ -50,6 +50,9 @@
   color: #fff;
   transition: 0.3s;
 }
+.login-btn.google i {
+  color: #fff;
+}
 .login-btn.google:hover {
   background-color: black;
   color: #fff;

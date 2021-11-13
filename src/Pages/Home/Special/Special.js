@@ -35,7 +35,6 @@ const Special = () => {
                     </div>
                     <div className="feature">
                       <span>
-                        {' '}
                         <i className="fas fa-gift"></i>
                       </span>
                       Free Gift Boxes

@@ -1,0 +1,10 @@
+.reviews-container {
+  background-color: rgb(250, 250, 250);
+  padding: 50px 0;
+}
+.reviews-container h1 {
+  color: rgb(255, 208, 0);
+}
+.review {
+  background-color: #fff;
+}

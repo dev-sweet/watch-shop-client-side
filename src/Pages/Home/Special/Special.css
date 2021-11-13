@@ -45,6 +45,10 @@
   justify-content: center;
   margin-right: 10px;
 }
+.feature span i {
+  font-size: 30px;
+  color: #fff;
+}
 .details-btn {
   background-color: #fff;
   color: rgb(71, 71, 71);

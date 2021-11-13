@@ -18,8 +18,8 @@ const Header = () => {
             <NavLink className="navbar-link" to="/">
               Home
             </NavLink>
-            <NavLink className="navbar-link" to="/">
-              Products
+            <NavLink className="navbar-link" to="/products">
+              Explore
             </NavLink>
           </Nav>
 
@@ -58,8 +58,8 @@ const Header = () => {
                 <NavLink className="navbar-link" to="/">
                   Home
                 </NavLink>
-                <NavLink className="navbar-link" to="/">
-                  Products
+                <NavLink className="navbar-link" to="/products">
+                  Explore
                 </NavLink>
                 {user.email && (
                   <NavLink className="navbar-link" to="/dashboard">
