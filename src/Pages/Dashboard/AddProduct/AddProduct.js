@@ -13,7 +13,7 @@ const AddProduct = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    fetch('https://stark-reef-55996.herokuapp.com/products', {
+    fetch('https://watch-shop-server-side-oznw.vercel.app/products', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',

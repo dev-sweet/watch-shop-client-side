@@ -11,7 +11,7 @@ const MakeAdmin = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch('https://stark-reef-55996.herokuapp.com/users/admin', {
+    fetch('https://watch-shop-server-side-oznw.vercel.app/users/admin', {
       method: 'PUT',
       headers: {
         'content-type': 'application/json',

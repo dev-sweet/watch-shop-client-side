@@ -10,7 +10,7 @@ const MyOrders = () => {
   const handleCancel = (id) => {
     const confirmation = window.confirm('Arye you sure to cancel this order ?');
     if (confirmation) {
-      fetch(`https://stark-reef-55996.herokuapp.com/orders/${id}`, {
+      fetch(`https://watch-shop-server-side-oznw.vercel.app/orders/${id}`, {
         method: 'DELETE',
       })
         .then((res) => res.json())
@@ -22,7 +22,7 @@ const MyOrders = () => {
 
   // console.log(orders);
   useEffect(() => {
-    fetch(`https://stark-reef-55996.herokuapp.com/orders/${user.email}`)
+    fetch(`https://watch-shop-server-side-oznw.vercel.app/orders/${user.email}`)
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, [orders, user.email]);

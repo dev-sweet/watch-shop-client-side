@@ -32,7 +32,7 @@ const PlaceOrder = () => {
       img,
       status: 'pending',
     };
-    fetch('https://stark-reef-55996.herokuapp.com/orders', {
+    fetch('https://watch-shop-server-side-oznw.vercel.app/orders', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
@@ -50,7 +50,7 @@ const PlaceOrder = () => {
 
   // get product information by product id
   useEffect(() => {
-    fetch(`https://stark-reef-55996.herokuapp.com/products/${id}`)
+    fetch(`https://watch-shop-server-side-oznw.vercel.app/products/${id}`)
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, [id]);

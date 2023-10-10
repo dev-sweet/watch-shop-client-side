@@ -23,7 +23,7 @@ const Review = () => {
       email: user.email,
     };
 
-    fetch('https://stark-reef-55996.herokuapp.com/reviews', {
+    fetch('https://watch-shop-server-side-oznw.vercel.app/reviews', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',

@@ -8,7 +8,7 @@ const ManageProducts = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm('Are you sure want to delete ?');
     if (proceed) {
-      fetch(`https://stark-reef-55996.herokuapp.com/products/${id}`, {
+      fetch(`https://watch-shop-server-side-oznw.vercel.app/products/${id}`, {
         method: 'DELETE',
       })
         .then((res) => res.json())
@@ -16,7 +16,7 @@ const ManageProducts = () => {
     }
   };
   useEffect(() => {
-    fetch('https://stark-reef-55996.herokuapp.com/products')
+    fetch('https://watch-shop-server-side-oznw.vercel.app/products')
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, [products]);

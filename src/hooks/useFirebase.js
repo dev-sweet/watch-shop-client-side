@@ -93,7 +93,7 @@ const useFirebase = () => {
 
   const saveUser = (email, displayName, method) => {
     const user = { email, displayName };
-    fetch('https://stark-reef-55996.herokuapp.com/users', {
+    fetch('https://watch-shop-server-side-oznw.vercel.app/users', {
       method: method,
       headers: {
         'content-type': 'application/json',
@@ -106,7 +106,7 @@ const useFirebase = () => {
 
   // test admin
   useEffect(() => {
-    fetch(`https://stark-reef-55996.herokuapp.com/users/${user.email}`)
+    fetch(`https://watch-shop-server-side-oznw.vercel.app/users/${user.email}`)
       .then((res) => res.json())
       .then((data) => setIsAdmin(data.admin));
   }, [user.email]);

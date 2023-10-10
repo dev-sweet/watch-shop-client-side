@@ -10,7 +10,7 @@ const ExploreProducts = () => {
   const [products, setProducts] = useState([]);
   const { isLoading } = useAuth();
   useEffect(() => {
-    fetch('https://stark-reef-55996.herokuapp.com/products')
+    fetch('https://watch-shop-server-side-oznw.vercel.app/products')
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, [products]);

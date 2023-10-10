@@ -5,7 +5,7 @@ const ManageOrders = () => {
 
   // change shipping status
   const handleStatus = (id) => {
-    fetch(`https://stark-reef-55996.herokuapp.com/orders/${id}`, {
+    fetch(`https://watch-shop-server-side-oznw.vercel.app/orders/${id}`, {
       method: 'PUT',
     })
       .then((res) => res.json())
@@ -16,7 +16,7 @@ const ManageOrders = () => {
   const handleDelete = (id) => {
     const confirmation = window.confirm('Arye you sure to delete this order ?');
     if (confirmation) {
-      fetch(`https://stark-reef-55996.herokuapp.com/orders/${id}`, {
+      fetch(`https://watch-shop-server-side-oznw.vercel.app/orders/${id}`, {
         method: 'DELETE',
       })
         .then((res) => res.json())
@@ -26,7 +26,7 @@ const ManageOrders = () => {
     }
   };
   useEffect(() => {
-    fetch('https://stark-reef-55996.herokuapp.com/orders')
+    fetch('https://watch-shop-server-side-oznw.vercel.app/orders')
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, [orders]);

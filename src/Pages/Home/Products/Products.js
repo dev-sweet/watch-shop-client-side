@@ -6,7 +6,7 @@ const Products = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch('https://stark-reef-55996.herokuapp.com/products?limit=6')
+    fetch('https://watch-shop-server-side-oznw.vercel.app/products?limit=6')
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
